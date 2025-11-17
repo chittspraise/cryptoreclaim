@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
+import { motion } from 'framer-motion';
 
 const faqData = [
   {
@@ -106,7 +107,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="container">
+      <div className="max-w-2xl mx-auto my-8 p-8 bg-neutral-800 border border-neutral-700 rounded-lg">
         <header>
           <div className="logo">CT.pro</div>
           <div className="hamburger" onClick={toggleNav}>
@@ -152,36 +153,66 @@ export default function Home() {
         <section id="services" className="section">
           <h2>Our Services</h2>
           <div className="grid">
-            <div className="card">
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006431.png" alt="Strategic Planning" width={50} height={50} />
               <h3>Strategic Planning</h3>
               <p>We develop a strategic plan to recover your assets.</p>
-            </div>
-            <div className="card">
+            </motion.div>
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
               <Image src="https://cdn-icons-png.flaticon.com/512/3997/3997842.png" alt="Crypto Wallet Tracing" width={50} height={50} />
               <h3>Crypto Wallet Tracing</h3>
               <p>We trace crypto wallets to locate your stolen funds.</p>
-            </div>
-            <div className="card">
+            </motion.div>
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <Image src="https://cdn-icons-png.flaticon.com/512/1087/1087840.png" alt="Blockchain Recovery" width={50} height={50} />
               <h3>Blockchain Recovery</h3>
               <p>We use advanced techniques to recover your assets from the blockchain.</p>
-            </div>
-            <div className="card">
+            </motion.div>
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Ransomware Analysis" width={50} height={50} />
               <h3>Ransomware Analysis</h3>
               <p>We analyze ransomware attacks to help you recover your data.</p>
-            </div>
-            <div className="card">
+            </motion.div>
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Phishing Attack Mitigation" width={50} height={50} />
               <h3>Phishing Attack Mitigation</h3>
               <p>We help you mitigate the damage from phishing attacks.</p>
-            </div>
-            <div className="card">
+            </motion.div>
+            <motion.div 
+              className="card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
               <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Crypto Wallet Analysis" width={50} height={50} />
               <h3>Crypto Wallet Analysis</h3>
               <p>We analyze crypto wallets to identify vulnerabilities.</p>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -210,22 +241,42 @@ export default function Home() {
           <h2>Asset Tracking Portfolio</h2>
           <p>We are here to assist you in locating the offenders and regaining control of your finances.</p>
           <div className="progress-container">
-            <div className="progress-bar">
+            <motion.div 
+              className="progress-bar"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <p>Bitcoin Recovery</p>
               <div className="progress" style={{width: '90%'}}>90%</div>
-            </div>
-            <div className="progress-bar">
+            </motion.div>
+            <motion.div 
+              className="progress-bar"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               <p>Investment Fraud Recovery</p>
               <div className="progress" style={{width: '85%'}}>85%</div>
-            </div>
-            <div className="progress-bar">
+            </motion.div>
+            <motion.div 
+              className="progress-bar"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
               <p>Romance Scams Recovery</p>
               <div className="progress" style={{width: '95%'}}>95%</div>
-            </div>
-            <div className="progress-bar">
+            </motion.div>
+            <motion.div 
+              className="progress-bar"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
               <p>Other Scam Resolutions</p>
               <div className="progress" style={{width: '80%'}}>80%</div>
-            </div>
+            </motion.div>
           </div>
         </section>
 

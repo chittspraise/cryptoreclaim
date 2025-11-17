@@ -98,7 +98,7 @@ export default function CasesTable({ cases }: { cases: Case[] }) {
                         href={caseItem.file_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-400 hover:underline"
+                        className="text-yellow-400 hover:underline"
                       >
                         View File
                       </a>
