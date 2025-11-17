@@ -1,0 +1,625 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ======================
+   Global Styling
+====================== */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url('/images/iriback.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #FFFFFF;
+  font-family: sans-serif;
+}
+
+main {
+  scroll-behavior: smooth;
+}
+/* ======================
+   Animations
+====================== */
+
+ @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+ @keyframes progressBar {
+  from {
+    width: 0%;
+  }
+}
+
+/* Fade-in animation for sections */
+ @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   Layout Containers
+====================== */
+
+.container {
+  background-color: transparent;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2E8540;
+}
+
+/* ======================
+   Navigation
+====================== */
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* ======================
+   Hero Section
+====================== */
+
+.hero {
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #FFFFFF;
+}
+
+.btn {
+  background-color: #2E8540;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+}
+
+/* ======================
+   Sections
+====================== */
+
+.section {
+  padding: 80px 0;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #FFFFFF;
+}
+
+/* ======================
+   Cards & Grids
+====================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background-color: rgba(249, 249, 249, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease-in-out;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #1E392A;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ======================
+   Progress Bars
+====================== */
+
+.progress-container {
+  margin-top: 40px;
+}
+
+.progress-bar {
+  margin-bottom: 20px;
+}
+
+.progress-bar p {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.progress {
+  background-color: #2E8540;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: right;
+  width: 0%;
+  animation: progressBar 2s ease-in-out forwards;
+}
+
+/* ======================
+   Tags
+====================== */
+
+.tags-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag:hover,
+.tag.active {
+  background-color: #2E8540;
+  color: #fff;
+  border-color: #2E8540;
+}
+
+/* ======================
+   Charts
+====================== */
+
+.chart-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: scale(1.05);
+}
+
+.chart-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======================
+   FAQ
+====================== */
+
+.faq-subtitle {
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  gap: 25px;
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(249, 249, 249, 0.8);
+  color: #333;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1E392A;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2E8540;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  margin-top: 0;
+  color: #333;
+}
+
+.faq-answer.open {
+  max-height: 200px;
+  margin-top: 15px;
+}
+
+/* ======================
+   About Section
+====================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-content h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #FFFFFF;
+}
+
+.about-image img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+}
+
+/* ======================
+   Footer
+====================== */
+
+.reclaim-assets-footer {
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 80px 0 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.footer-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.footer-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.btn-large {
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-grid h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #2E8540;
+}
+
+.footer-grid p,
+.footer-grid a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-grid li {
+  margin-bottom: 10px;
+}
+
+.footer-grid a:hover {
+  color: #FFFFFF;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 0;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================
+   Reach-out Section
+====================== */
+
+.reach-out-section {
+  padding: 100px 0;
+}
+
+.reach-out-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.reach-out-text h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.reach-out-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.reach-out-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.reach-out-form input,
+.reach-out-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.reach-out-form textarea {
+  resize: vertical;
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 2px dashed #2E8540;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+  background-color: rgba(46, 133, 64, 0.1);
+}
+
+.file-upload-label svg {
+  margin-right: 10px;
+}
+
+#file-upload {
+  display: none;
+}
+
+.reach-out-form .btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 16px;
+}
+
+/* Animations for reach-out */
+.reach-out-text,
+.reach-out-form {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* ======================
+   Media Queries
+====================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  nav {
+    width: 100%;
+    display: none; /* Hidden by default on mobile */
+  }
+
+  nav.active {
+    display: block; /* Shown when hamburger is clicked */
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .header-btn {
+    display: none;
+  }
+
+  .grid,
+  .about-grid,
+  .reach-out-content,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content h2,
+  .reach-out-text h2 {
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+}
+
