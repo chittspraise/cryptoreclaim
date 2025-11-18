@@ -1,10 +1,10 @@
-import { createServerClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
-import AdminPageClient from "./AdminPageClient";
+export const dynamic = 'force-dynamic';
 
+import { createServerClient } from "../../../utils/supabase/server";
+import { redirect } from "next/navigation";
+import AdminPageClient from "../AdminPageClient";
 export default async function AdminPage() {
   const supabase = createServerClient();
-
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -14,7 +14,7 @@ export default async function AdminPage() {
   }
 
   const { data: cases, error } = await supabase
-    .from("cases")
+    .from("claims")
     .select("*")
     .order("created_at", { ascending: false });
 
@@ -24,7 +24,7 @@ export default async function AdminPage() {
     return <div>Error fetching data</div>;
   }
 
-  const signOut = async () => {
+    const signOut = async () => {
     "use server";
 
     const supabase = createServerClient();

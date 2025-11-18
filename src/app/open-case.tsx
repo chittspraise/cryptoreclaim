@@ -67,9 +67,8 @@ export default function OpenCase() {
               <div>
                 <h3>Follow Us</h3>
                 <div className="social-media">
-                  <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width={30} height={30} /></a>
-                  <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width={30} height={30} /></a>
-                </div>
+                                <a href="#"><Image src="/images/facebook_logo.svg" alt="Facebook" width={30} height={30} /></a>
+                                <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/instagram_logo.svg" alt="Instagram" width={30} height={30} /></a>                </div>
               </div>
             </div>
           </div>

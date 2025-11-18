@@ -14,7 +14,7 @@ export default async function AdminPage() {
   }
 
   const { data: cases, error } = await supabase
-    .from("cases")
+    .from("claims")
     .select("*")
     .order("created_at", { ascending: false });
 

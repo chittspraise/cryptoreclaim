@@ -79,7 +79,7 @@ export default function Home() {
     }
 
     const { data, error: insertError } = await supabase
-      .from('cases')
+      .from('claims')
       .insert([{ name, email, subject, message, file_url: fileUrl }]);
 
     if (insertError) {
@@ -133,8 +133,9 @@ export default function Home() {
 
         <section className="hero">
           <div className="hero-logo">
-            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={190} />
+            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={114} />
           </div>
+          <p className="text-center text-lg text-white my-4">Romance Scams | Online Blackmail | Crypto Recovery | Investment Scams | Blockchain Forensics</p>
           <a href="/open-case" className="btn">Get a Free Consultation</a>
         </section>
 
@@ -490,7 +491,7 @@ export default function Home() {
               <div>
                 <h3>About Crypto Reclaim</h3>
                 <p>Crypto Reclaim is a leading expert in the field of cybercrime investigation and crypto asset recovery. We are dedicated to providing our clients with the best possible service and support.</p>
-              </div>
+             </div>
               <div>
                 <h3>Quick Links</h3>
                 <ul>
@@ -508,9 +509,8 @@ export default function Home() {
               <div>
                 <h3>Follow Us</h3>
                 <div className="social-media">
-                  <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width={30} height={30} /></a>
-                  <a href="https://www.instagram.com/cizee_99/"><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width={30} height={30} /></a>
-                </div>
+                            <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac"><Image src="/images/facebook.png" alt="Facebook" width={30} height={30} /></a>
+                            <a href="https://www.instagram.com/cizee_99/"><Image src="/images/insta.avif" alt="Instagram" width={30} height={30} /></a>                </div>
               </div>
             </div>
           </div>

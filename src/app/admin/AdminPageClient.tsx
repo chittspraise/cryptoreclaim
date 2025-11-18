@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { deleteCase } from "./actions";
+import { deleteClaim } from "./actions";
 
 interface Case {
   id: string | number;
@@ -34,7 +34,7 @@ export default function AdminPageClient({
     setCases(cases.filter((c) => c.id !== id));
     setShowConfirm(null);
 
-    const result = await deleteCase(id);
+    const result = await deleteClaim(id);
 
     if (!result.success) {
       // If the deletion fails, revert the UI change and show an alert
