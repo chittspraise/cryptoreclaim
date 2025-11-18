@@ -51,7 +51,7 @@ export default function OpenCase() {
     }
 
     const { data, error: insertError } = await supabase
-      .from('cases')
+      .from('claims')
       .insert([{ name, email, subject, message, file_url: fileUrl }]);
 
     if (insertError) {
