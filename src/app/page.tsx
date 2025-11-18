@@ -133,7 +133,7 @@ export default function Home() {
 
         <section className="hero">
           <div className="hero-logo">
-            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={114} />
+            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={150} />
           </div>
           <p className="text-center text-lg text-white my-4">Romance Scams | Online Blackmail | Crypto Recovery | Investment Scams | Blockchain Forensics</p>
           <a href="/open-case" className="btn">Get a Free Consultation</a>
