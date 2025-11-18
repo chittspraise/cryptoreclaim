@@ -50,12 +50,12 @@ export default function AdminPageClient({
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="p-6 md:p-8">
-          <header>
-            <div className="logo">
+          <header className="flex flex-wrap justify-between items-center py-4">
+            <div className="logo mb-4 md:mb-0">
               <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={150} height={100} />
             </div>
-            <nav>
-              <ul>
+            <nav className="mb-4 md:mb-0">
+              <ul className="flex">
                 <li><Link href="/" className="text-white hover:text-yellow-500 no-underline">Home</Link></li>
               </ul>
             </nav>
@@ -66,46 +66,46 @@ export default function AdminPageClient({
           <h1 className="text-2xl sm:text-3xl font-bold text-white text-center my-8">
             Case Submissions ({cases.length})
           </h1>
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {cases.length === 0 ? (
-              <p className="text-center text-gray-300 py-8">No cases found.</p>
+              <p className="text-center text-gray-300 py-8 md:col-span-2 lg:col-span-3">No cases found.</p>
             ) : (
               cases.map((caseItem) => (
-                <div key={caseItem.id} className="bg-white/10 rounded-lg shadow-lg p-6 hover:bg-white/20 transition-all duration-300 border-b-2 border-gray-500 pb-6 mb-6">
+                <div key={caseItem.id} className="bg-white/10 rounded-lg shadow-lg p-6 hover:bg-white/20 transition-all duration-300 border-b-2 border-gray-500 flex flex-col justify-between">
                   {/* -- Case Details -- */}
                   <div className="space-y-4">
                     {/* Name */}
-                    <div className="flex gap-x-4">
-                      <p className="w-1/4 font-bold text-white flex-shrink-0">Name:</p>
-                      <p className="w-3/4 text-gray-300">{caseItem.name}</p>
+                    <div className="flex flex-col md:flex-row md:gap-x-4">
+                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Name:</p>
+                      <p className="w-full md:w-3/4 text-gray-300">{caseItem.name}</p>
                     </div>
                     {/* Email */}
-                    <div className="flex gap-x-4 items-center">
-                      <p className="w-1/4 font-bold text-white flex-shrink-0">Email:</p>
-                      <div className="w-3/4 flex items-center justify-between gap-2">
+                    <div className="flex flex-col md:flex-row md:gap-x-4 items-start md:items-center">
+                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Email:</p>
+                      <div className="w-full md:w-3/4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-2 md:mt-0">
                         <p className="text-gray-300 break-all">{caseItem.email}</p>
                         <a 
                           href={`mailto:${caseItem.email}`}
-                          className="btn text-white no-underline flex-shrink-0"
+                          className="btn text-white no-underline flex-shrink-0 mt-2 sm:mt-0"
                         >
                           Send Email
                         </a>
                       </div>
                     </div>
                     {/* Subject */}
-                    <div className="flex gap-x-4">
-                      <p className="w-1/4 font-bold text-white flex-shrink-0">Subject:</p>
-                      <p className="w-3/4 text-gray-300">{caseItem.subject}</p>
+                    <div className="flex flex-col md:flex-row md:gap-x-4">
+                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Subject:</p>
+                      <p className="w-full md:w-3/4 text-gray-300">{caseItem.subject}</p>
                     </div>
                     {/* Message */}
-                    <div className="flex gap-x-4">
-                      <p className="w-1/4 font-bold text-white flex-shrink-0">Message:</p>
-                      <p className="w-3/4 text-gray-300 whitespace-pre-wrap break-words">{caseItem.message}</p>
+                    <div className="flex flex-col md:flex-row md:gap-x-4">
+                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Message:</p>
+                      <p className="w-full md:w-3/4 text-gray-300 whitespace-pre-wrap break-words">{caseItem.message}</p>
                     </div>
                     {/* Uploaded File */}
-                    <div className="flex gap-x-4 items-start pt-2">
-                      <p className="w-1/4 font-bold text-white flex-shrink-0">Uploaded File:</p>
-                      <div className="w-3/4">
+                    <div className="flex flex-col md:flex-row md:gap-x-4 items-start pt-2">
+                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Uploaded File:</p>
+                      <div className="w-full md:w-3/4 mt-2 md:mt-0">
                         {caseItem.file_url ? (
                           isImage(caseItem.file_url) ? (
                             <a href={caseItem.file_url} target="_blank" rel="noopener noreferrer">
@@ -123,7 +123,7 @@ export default function AdminPageClient({
                     </div>
                   </div>
                   {/* -- Timestamp and Delete Button -- */}
-                  <div className="flex justify-between items-center mt-4">
+                  <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
                     <p className="text-xs text-gray-400">
                       {new Date(caseItem.created_at).toLocaleString()}
                     </p>
@@ -141,8 +141,8 @@ export default function AdminPageClient({
         </div>
       </div>
       {showConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
             <h2 className="text-lg font-bold text-white">Are you sure?</h2>
             <p className="text-gray-300 mt-2">This action cannot be undone.</p>
             <div className="flex justify-end gap-4 mt-4">
