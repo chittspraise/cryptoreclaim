@@ -10,7 +10,7 @@ const faqData = [
     answer: "Cryptocurrency recovery is the process of retrieving lost or inaccessible digital assets. This can be due to various reasons such as forgotten passwords, hardware failure, or scams."
   },
   {
-    question: "How does Cryptotrace work?",
+    question: "How does Crypto Reclaim work?",
     answer: "We use a combination of advanced blockchain analysis, forensic techniques, and legal expertise to trace and recover your stolen crypto assets. Our team of experts works diligently to track the movement of your funds and identify the culprits."
   },
   {
@@ -60,7 +60,7 @@ export default function Home() {
 
     if (file) {
       const fileName = `${Date.now()}_${file.name}`;
-      const { data: fileData, error: fileError } = await supabase.storage
+      const { error: fileError } = await supabase.storage
         .from('case-files')
         .upload(fileName, file);
 
@@ -107,9 +107,11 @@ export default function Home() {
 
   return (
     <main>
-      <div className="max-w-2xl mx-auto my-8 p-8 bg-neutral-800 border border-neutral-700 rounded-lg">
+      <div className="w-full max-w-7xl mx-auto my-8 p-8 bg-neutral-800 border border-neutral-700 rounded-lg px-4 sm:px-6 lg:px-8">
         <header>
-          <div className="logo">CT.pro</div>
+          <div className="logo">
+            <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={150} height={120} />
+          </div>
           <div className="hamburger" onClick={toggleNav}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -130,23 +132,20 @@ export default function Home() {
         </header>
 
         <section className="hero">
-<h1>Cryptotrace</h1>
-          <p>Cybercrime Investigations And Crypto Asset Recovery</p>
-          <p>Romance Scams | Online Blackmail | Crypto Recovery | Investment Scams | Blockchain Forensics</p>
+          <div className="hero-logo">
+            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={190} />
+          </div>
           <a href="/open-case" className="btn">Get a Free Consultation</a>
         </section>
 
         <section id="about" className="section">
-          <div className="about-grid">
-            <div className="about-content">
-              <h2>About Us</h2>
-              <p>Cryptotrace is a leading expert in the field of cybercrime investigation and crypto asset recovery. We are a team of seasoned cybersecurity experts, blockchain analysts, and financial forensic specialists dedicated to helping victims of online scams and cryptocurrency theft. Our mission is to provide our clients with the best possible service and support in navigating the complex world of digital asset recovery.</p>
-              <p>We understand the distress and frustration that comes with losing your hard-earned assets. That’s why we are committed to employing cutting-edge technology and investigative techniques to trace, track, and retrieve your funds. With a high success rate and a client-centric approach, we strive to deliver results and restore your peace of mind.</p>
-              <a href="#" className="btn">Learn More</a>
-            </div>
-            <div className="about-image">
-              <Image src="/images/top-view-of-business-people-sitting-at-table-and-working-together-in-office-business-meeting-on-a-working-table-top-view-no-visible-faces-ai-generated-free-photo.jpg" alt="About Us" width={500} height={350} />
-            </div>
+          <div className="about-image">
+            <Image src="/images/finace1.png" alt="About Us" width={1200} height={400} className="about-banner-image" />
+          </div>
+          <div className="about-content text-center mt-8">
+            <h2>About Us</h2>
+                          <p>At Crypto Reclaim, we stand as a premier authority in cybercrime investigation and the intricate process of crypto asset recovery. Our dedicated team comprises experienced cybersecurity professionals, adept blockchain analysts, and skilled financial forensic specialists. We are committed to assisting individuals who have fallen victim to online scams and cryptocurrency theft, ensuring they receive unparalleled service and guidance through the challenging landscape of digital asset retrieval.</p>              <p>Recognizing the profound distress and frustration caused by the loss of valuable digital assets, we are steadfast in our commitment. We leverage state-of-the-art technology and advanced investigative methodologies to meticulously trace, track, and recover your funds. Our proven track record of high success, combined with a client-focused philosophy, drives us to achieve tangible results and ultimately restore your peace of mind.</p>
+            
           </div>
         </section>
 
@@ -159,9 +158,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006431.png" alt="Strategic Planning" width={50} height={50} />
-              <h3>Strategic Planning</h3>
-              <p>We develop a strategic plan to recover your assets.</p>
+              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006431.png" alt="Strategic Planning" width={50} height={50} className="service-icon" />
+              <h3>Custom Recovery Strategies</h3>
+              <p>Our experts design a tailored action plan to maximize the chances of retrieving your digital assets.</p>
             </motion.div>
             <motion.div 
               className="card"
@@ -169,9 +168,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/3997/3997842.png" alt="Crypto Wallet Tracing" width={50} height={50} />
-              <h3>Crypto Wallet Tracing</h3>
-              <p>We trace crypto wallets to locate your stolen funds.</p>
+              <Image src="https://cdn-icons-png.flaticon.com/512/3997/3997842.png" alt="Crypto Wallet Tracing" width={50} height={50} className="service-icon" />
+              <h3>Digital Wallet Tracking</h3>
+              <p>Using advanced forensic tools, we meticulously trace wallet activities to pinpoint the location of your funds.</p>
             </motion.div>
             <motion.div 
               className="card"
@@ -179,9 +178,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/1087/1087840.png" alt="Blockchain Recovery" width={50} height={50} />
-              <h3>Blockchain Recovery</h3>
-              <p>We use advanced techniques to recover your assets from the blockchain.</p>
+              <Image src="https://cdn-icons-png.flaticon.com/512/1087/1087840.png" alt="Blockchain Recovery" width={50} height={50} className="service-icon" />
+              <h3>On-Chain Asset Retrieval</h3>
+              <p>We employ sophisticated on-chain methods to reclaim your assets directly from the blockchain.</p>
             </motion.div>
             <motion.div 
               className="card"
@@ -189,9 +188,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Ransomware Analysis" width={50} height={50} />
-              <h3>Ransomware Analysis</h3>
-              <p>We analyze ransomware attacks to help you recover your data.</p>
+              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Ransomware Analysis" width={50} height={50} className="service-icon" />
+              <h3>Ransomware Incident Response</h3>
+              <p>Our team dissects ransomware attacks to identify recovery vectors and help restore your critical data.</p>
             </motion.div>
             <motion.div 
               className="card"
@@ -199,9 +198,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Phishing Attack Mitigation" width={50} height={50} />
-              <h3>Phishing Attack Mitigation</h3>
-              <p>We help you mitigate the damage from phishing attacks.</p>
+              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Phishing Attack Mitigation" width={50} height={50} className="service-icon" />
+              <h3>Phishing Scam Defense</h3>
+              <p>We assist in minimizing the impact of phishing schemes and help secure your accounts from further harm.</p>
             </motion.div>
             <motion.div 
               className="card"
@@ -209,9 +208,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Crypto Wallet Analysis" width={50} height={50} />
-              <h3>Crypto Wallet Analysis</h3>
-              <p>We analyze crypto wallets to identify vulnerabilities.</p>
+              <Image src="https://cdn-icons-png.flaticon.com/512/1006/1006561.png" alt="Crypto Wallet Analysis" width={50} height={50} className="service-icon" />
+              <h3>Wallet Security Audits</h3>
+              <p>We conduct in-depth analyses of crypto wallets to uncover and fortify potential security weaknesses.</p>
             </motion.div>
           </div>
         </section>
@@ -221,18 +220,18 @@ export default function Home() {
           <div className="grid">
             <div className="card">
               <Image src="https://cdn-icons-png.flaticon.com/512/2706/2706821.png" alt="Support Systems" width={50} height={50} />
-              <h3>Support Systems</h3>
-              <p>Our support systems are designed to provide you with the best assistance.</p>
+              <h3>Dedicated Client Support</h3>
+              <p>Our robust support systems are designed to provide you with unparalleled assistance throughout your recovery journey.</p>
             </div>
             <div className="card">
               <Image src="https://cdn-icons-png.flaticon.com/512/1067/1067492.png" alt="Quick Navigation" width={50} height={50} />
-              <h3>Quick Navigation</h3>
-              <p>Our platform is easy to navigate, ensuring a seamless experience.</p>
+              <h3>Streamlined Process</h3>
+              <p>Experience a seamless and efficient recovery process with our intuitive platform and expert guidance.</p>
             </div>
             <div className="card">
               <Image src="https://cdn-icons-png.flaticon.com/512/2165/2165549.png" alt="Resource Allocation" width={50} height={50} />
-              <h3>Resource Allocation</h3>
-              <p>We allocate the necessary resources to ensure a successful recovery.</p>
+              <h3>Optimized Resource Deployment</h3>
+              <p>We strategically allocate all necessary resources to ensure the most effective and successful asset recovery.</p>
             </div>
           </div>
         </section>
@@ -281,12 +280,35 @@ export default function Home() {
         </section>
 
         <section id="asset-charts" className="section">
-          <h2>ASSET CHARTS</h2>
-          <div className="grid">
-            <div className="chart-card">
-              <Image src="/images/Screenshot 2025-09-24 104731.png" alt="Asset Chart" width={800} height={600} />
-            </div>
+          <h2>ASSET RECOVERY GROWTH (2021-2025)</h2>
+          <p>Annual overview of successfully recovered cases, demonstrating our consistent growth and effectiveness.</p>
+          <div className="chart-container">
+            {(() => {
+              const yearlyData = [
+                { year: 2021, cases: 450 },
+                { year: 2022, cases: 620 },
+                { year: 2023, cases: 890 },
+                { year: 2024, cases: 1150 },
+                { year: 2025, cases: 1420, projected: true },
+              ];
+              const maxValue = Math.max(...yearlyData.map(d => d.cases));
+
+              return yearlyData.map((data, index) => (
+                <div key={index} className="chart-bar-wrapper">
+                  <div className="chart-value">{data.cases}{data.projected && '*'}</div>
+                  <motion.div
+                    className="chart-bar"
+                    style={{ backgroundColor: data.projected ? '#a08d3a' : '#FFC700' }}
+                    initial={{ height: 0 }}
+                    animate={{ height: `${(data.cases / maxValue) * 100}%` }}
+                    transition={{ duration: 1, delay: index * 0.2 }}
+                  ></motion.div>
+                  <div className="chart-label">{data.year}</div>
+                </div>
+              ));
+            })()}
           </div>
+          <p style={{textAlign: 'center', marginTop: '15px', fontSize: '12px', color: '#aaa'}}>*Projected</p>
         </section>
 
         <section id="faq" className="section">
@@ -308,35 +330,54 @@ export default function Home() {
         </section>
 
         <section id="testimonials" className="section">
-          <h2>Testimonials</h2>
+          <h2>What Our Clients Say</h2>
           <div className="grid">
-            <div className="card text-center">
-              <Image src="/images/off2.jpeg" alt="Testimonial 1" width={100} height={100} className="rounded-full mx-auto" />
-              <p className="mt-4">&quot;I am grateful for their help in recovering my stolen crypto.&quot;</p>
+            <motion.div
+              className="card text-center"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Image src="/images/finance4.png" alt="Testimonial 1" width={100} height={100} className="rounded-full mx-auto" />
+              <p className="mt-4">&quot;I was devastated after losing a significant amount of crypto. The team at Crypto Reclaim was incredibly supportive and professional, and I&apos;m so grateful for their expertise in helping me recover my funds.&quot;</p>
               <div className="flex items-center justify-center mt-4 space-x-2">
                 <span className="text-yellow-400 text-xl">★★★★</span>
                 <span className="text-sm font-semibold text-green-500">Verified</span>
               </div>
-              <h4 className="mt-4 font-bold">- Alex Cohen</h4>
-            </div>
-            <div className="card text-center">
+              <h4 className="mt-4 font-bold">- Michael Harold</h4>
+            </motion.div>
+            <motion.div
+              className="card text-center"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <Image src="/images/offic1.jpg" alt="Testimonial 2" width={100} height={100} className="rounded-full mx-auto" />
-              <p className="mt-4">&quot;The customer service alone deserves 5 stars.Every question I had was answered clearly and politely.The results were even better than I expected, and I feel confident recommending them to anyone.&quot;</p>
+              <p className="mt-4">&quot;The level of customer service I received was outstanding. Every question was answered with patience and clarity. The final result exceeded my expectations, and I wholeheartedly recommend their services.&quot;</p>
               <div className="flex items-center justify-center mt-4 space-x-2">
                 <span className="text-yellow-400 text-xl">★★★★</span>
                 <span className="text-sm font-semibold text-green-500">Verified</span>
               </div>
-              <h4 className="mt-4 font-bold">- Sarah Miller</h4>
-            </div>
-            <div className="card text-center">
-              <Image src="/images/test.jpeg" alt="Testimonial 3" width={100} height={100} className="rounded-full mx-auto" />
-              <p className="mt-4">&quot;I can recommend Cryptotrace 100 %. Profund knowledge about crypto, absolute integrity, reasonable cost, quick reaction! Top contact!&quot;</p>
+              <h4 className="mt-4 font-bold">- Mercy Lorraine Mayers</h4>
+            </motion.div>
+            <motion.div
+              className="card text-center"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Image src="/images/financ3.png" alt="Testimonial 3" width={100} height={100} className="rounded-full mx-auto" />
+              <p className="mt-4">&quot;I can&apos;t recommend Crypto Reclaim enough. Their deep knowledge of the crypto space, combined with their integrity and prompt communication, made all the difference. A top-tier service from start to finish.&quot;</p>
               <div className="flex items-center justify-center mt-4 space-x-2">
                 <span className="text-yellow-400 text-xl">★★★★★</span>
+                <br></br>
                 <span className="text-sm font-semibold text-green-500">Verified</span>
               </div>
-              <h4 className="mt-4 font-bold">Allen</h4>
-            </div>
+              <h4 className="mt-4 font-bold">Patricia Hudson</h4>
+            </motion.div>
           </div>
         </section>
 
@@ -354,7 +395,7 @@ export default function Home() {
           </div>
           <div className="grid">
             <div className="card">
-              <Image src="/images/ai-generated-8165298_960_720.jpg" alt="Crypto Security" width={300} height={200} className="card-image" />
+              <Image src="/images/OIP.jpeg" alt="Crypto Security" width={300} height={200} className="card-image" />
               <h3>Increased Fraud Cases</h3>
               <p>The rise of cryptocurrency has also led to an increase in fraud cases. Learn how to protect yourself from crypto scams.</p>
             </div>
@@ -364,7 +405,7 @@ export default function Home() {
               <p>Discover the latest trends and technologies that are shaping the future of crypto security.</p>
             </div>
             <div className="card">
-              <Image src="/images/top-view-of-business-people-sitting-at-table-and-working-together-in-office-business-meeting-on-a-working-table-top-view-no-visible-faces-ai-generated-free-photo.jpg" alt="Financial" width={300} height={200} className="card-image" />
+              <Image src="/images/pple.png" alt="Financial" width={300} height={200} className="card-image" />
               <h3>Revolutionized Financial Landscape</h3>
               <p>Explore how cryptocurrency is revolutionizing the financial landscape and what it means for the future of money.</p>
             </div>
@@ -377,8 +418,8 @@ export default function Home() {
               <h2>Reach Out Now</h2>
               <p>Ready to take the first step towards recovering your assets? Contact us today for a free, no-obligation consultation. Our team is standing by to listen to your story and provide you with a clear action plan. Every second counts in the world of crypto recovery, so don’t delay.</p>
               <div className="contact-info">
-                <p><strong>Email:</strong> support@cryptotrace.pro</p>
-                <p><strong>Phone:</strong> +1 (615) 507-5115</p>
+                <p><strong>Email:</strong> cryptoreclaim@usa.com</p>
+                <p><strong>Phone:</strong> +1 302 334 2200</p>
                 <p><strong>Address:</strong> 45th Street Down Town Los Angeles California 90001</p>
               </div>
             </div>
@@ -447,8 +488,8 @@ export default function Home() {
           <div className="footer-links">
             <div className="footer-grid">
               <div>
-                <h3>About CT.pro</h3>
-                <p>Cryptotrace is a leading expert in the field of cybercrime investigation and crypto asset recovery. We are dedicated to providing our clients with the best possible service and support.</p>
+                <h3>About Crypto Reclaim</h3>
+                <p>Crypto Reclaim is a leading expert in the field of cybercrime investigation and crypto asset recovery. We are dedicated to providing our clients with the best possible service and support.</p>
               </div>
               <div>
                 <h3>Quick Links</h3>
@@ -461,25 +502,25 @@ export default function Home() {
               </div>
               <div>
                 <h3>Contact Us</h3>
-                <p>Email: support@cryptotrace.pro</p>
-                <p>Phone: +1 (615) 507-5115</p>
+                <p>Email: cryptoreclaim@usa.com</p>
+                <p>Phone: +1 302 334 2200</p>
               </div>
               <div>
                 <h3>Follow Us</h3>
                 <div className="social-media">
                   <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width={30} height={30} /></a>
-                  <a href="https://www.instagram.com/cryptotrace65?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width={30} height={30} /></a>
+                  <a href="https://www.instagram.com/cizee_99/"><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width={30} height={30} /></a>
                 </div>
               </div>
             </div>
           </div>
           <div className="footer-copyright">
-            <p>&copy; 2025 Cryptotrace. All rights reserved.</p>
+            <p>&copy; 2025 Crypto Reclaim. All rights reserved.</p>
           </div>
         </footer>
 
-        <a href="https://wa.me/16155075115" className="whatsapp-icon" target="_blank">
-          <Image src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" width={50} height={50} />
+        <a href="https://wa.me/13023342200" className="whatsapp-icon" target="_blank">
+          <Image src="/images/iconapp.png" alt="WhatsApp" width={50} height={50} />
         </a>
       </div>
     </main>

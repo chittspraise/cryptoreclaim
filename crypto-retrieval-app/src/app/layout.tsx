@@ -3,7 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Cryptotrace",
+  title: "Crypto Reclaim",
   description: "Crypto Recovery Service",
   icons: {
     icon: '/images/bcdkrnd.png',

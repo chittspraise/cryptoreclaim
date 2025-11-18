@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AdminHeader({ signOut }: { signOut: () => Promise<never> }) {
   return (
     <div className="flex justify-between items-center mb-6">
-      <h1 className="text-2xl sm:text-3xl font-bold text-white">
-        Admin Panel: Case Submissions
-      </h1>
+      <Link href="/admin">
+        <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={150} height={100} />
+      </Link>
       <div className="flex items-center">
         <Link
           href="/"

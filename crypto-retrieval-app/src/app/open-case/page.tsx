@@ -31,7 +31,7 @@ export default function OpenCase() {
 
     if (file) {
       const fileName = `${Date.now()}_${file.name}`;
-      const { data: fileData, error: fileError } = await supabase.storage
+      const { error: fileError } = await supabase.storage
         .from('case-files') // Make sure you have a bucket named 'case-files' in your Supabase project
         .upload(fileName, file);
 
@@ -73,7 +73,11 @@ export default function OpenCase() {
     <main>
       <div className="container">
         <header>
-          <div className="logo">CT.pro</div>
+          <div className="logo">
+            <Link href="/">
+              <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={150} height={100} />
+            </Link>
+          </div>
           <nav>
             <ul>
               <li><Link href="/">Home</Link></li>
@@ -82,7 +86,7 @@ export default function OpenCase() {
               <li><Link href="/#contact">Contact</Link></li>
             </ul>
           </nav>
-          <Link href="/open-case" className="btn">Open Case</Link>
+
         </header>
 
         <section className="section">
@@ -152,7 +156,7 @@ export default function OpenCase() {
             <div className="footer-grid">
               <div>
                 <h3>About CT.pro</h3>
-                <p>CRYPTO RECOVERY SOLUTIONS is a leading expert in the field of cybercrime investigation and crypto asset recovery. We are dedicated to providing our clients with the best possible service and support.</p>
+                <p>Crypto Reclaim is a leading expert in the field of cybercrime investigation and crypto asset recovery. We are dedicated to providing our clients with the best possible service and support.</p>
               </div>
               <div>
                 <h3>Quick Links</h3>
@@ -165,7 +169,7 @@ export default function OpenCase() {
               </div>
               <div>
                 <h3>Contact Us</h3>
-                <p>Email: support@cryptotrace.pro</p>
+                <p>Email: cryptoreclaim@usa.com</p>
                 <p>Phone: +1 (530) 414-0088</p>
               </div>
               <div>
@@ -173,18 +177,18 @@ export default function OpenCase() {
                 <div className="social-media">
                   <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width={30} height={30} /></a>
                   <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Twitter" width={30} height={30} /></a>
-                  <a href="https://www.instagram.com/cryptotrace65?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width={30} height={30} /></a>
+                  <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width={30} height={30} /></a>
                 </div>
               </div>
             </div>
           </div>
           <div className="footer-copyright">
-            <p>&copy; 2025 CRYPTO RECOVERY SOLUTIONS. All rights reserved.</p>
+            <p>&copy; 2025 Crypto Reclaim. All rights reserved.</p>
           </div>
         </footer>
 
         <a href="https://wa.me/16155075115" className="whatsapp-icon" target="_blank">
-          <Image src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" width={50} height={50} />
+          <Image src="/images/iconapp.png" alt="WhatsApp" width={50} height={50} />
         </a>
       </div>
     </main>

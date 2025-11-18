@@ -15,8 +15,7 @@ export function createServerClient() {
           const cookieStore = await cookies()
           try {
             cookieStore.set({ name, value, ...options })
-          } catch (error) {
-            // The `set` method was called from a Server Component.
+          } catch (_error) {
             // This can be ignored if you have middleware refreshing
             // user sessions.
           }
@@ -25,7 +24,7 @@ export function createServerClient() {
           const cookieStore = await cookies()
           try {
             cookieStore.set({ name, value: '', ...options })
-          } catch (error) {
+          } catch (_error) {
             // The `remove` method was called from a Server Component.
             // This can be ignored if you have middleware refreshing
             // user sessions.
