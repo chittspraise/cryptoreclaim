@@ -510,7 +510,7 @@ export default function Home() {
                 <h3>Follow Us</h3>
                 <div className="social-media">
                             <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac"><Image src="/images/facebook.png" alt="Facebook" width={30} height={30} /></a>
-                            <a href="https://www.instagram.com/cizee_99/"><Image src="/images/insta.avif" alt="Instagram" width={30} height={30} /></a>                </div>
+                            <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/insta.avif" alt="Instagram" width={30} height={30} /></a>                </div>
               </div>
             </div>
           </div>
