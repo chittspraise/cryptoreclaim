@@ -1,0 +1,708 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ======================
+   Global Styling
+====================== */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #121212;
+  color: #FFFFFF;
+  font-family: sans-serif;
+}
+
+main {
+  scroll-behavior: smooth;
+}
+/* ======================
+   Animations
+====================== */
+
+ @keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+ @keyframes progressBar {
+  from {
+    width: 0%;
+  }
+}
+
+/* Fade-in animation for sections */
+ @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   Layout Containers
+====================== */
+
+.container {
+  background-color: transparent;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: transparent;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFC700;
+}
+
+/* ======================
+   Navigation
+====================== */
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* ======================
+   Hero Section
+====================== */
+
+.hero {
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #FFFFFF;
+}
+
+.btn {
+  background-color: #FFC700;
+  color: #121212;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+}
+
+/* ======================
+   Sections
+====================== */
+
+.section {
+  padding: 80px 0;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #FFFFFF;
+}
+
+/* ======================
+   Cards & Grids
+====================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: transform 0.3s ease-in-out;
+  color: #FFFFFF;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* ======================
+   Progress Bars
+====================== */
+
+.progress-container {
+  margin-top: 40px;
+}
+
+.progress-bar {
+  margin-bottom: 20px;
+}
+
+.progress-bar p {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.progress {
+  background-color: #FFC700;
+  color: #121212;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: right;
+  width: 0%;
+  animation: progressBar 2s ease-in-out forwards;
+}
+
+/* ======================
+   Tags
+====================== */
+
+.tags-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tag:hover,
+.tag.active {
+  background-color: #FFC700;
+  color: #121212;
+  border-color: #FFC700;
+}
+
+/* ======================
+   Charts
+====================== */
+
+.chart-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: scale(1.05);
+}
+
+.chart-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ======================
+   FAQ
+====================== */
+
+.faq-subtitle {
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  gap: 25px;
+}
+
+.faq-item {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #FFFFFF;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFC700;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  margin-top: 0;
+  color: #FFFFFF;
+}
+
+.faq-answer.open {
+  max-height: 200px;
+  margin-top: 15px;
+}
+
+/* ======================
+   About Section
+====================== */
+
+.about-banner-image {
+  width: 100%;
+  height: 400px; /* Fixed height for banner */
+  object-fit: cover; /* Cover the area */
+  border-radius: 15px;
+  margin-bottom: 40px; /* Space below the banner */
+}
+
+.about-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #FFFFFF;
+  text-align: center;
+  max-width: 800px; /* Constrain text width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-image img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+}
+
+/* ======================
+   Footer
+====================== */
+
+.reclaim-assets-footer {
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 80px 0 0;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.footer-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.footer-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.btn-large {
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-links {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 80vw;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-grid h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.footer-grid p,
+.footer-grid a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-grid li {
+  margin-bottom: 10px;
+}
+
+.footer-grid a:hover {
+  color: #FFFFFF;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px 0;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================
+   Reach-out Section
+====================== */
+
+.reach-out-section {
+  padding: 100px 0;
+}
+
+.reach-out-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.reach-out-text h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.reach-out-text p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.reach-out-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.reach-out-form input,
+.reach-out-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reach-out-form input:focus,
+.reach-out-form textarea:focus {
+  outline: none;
+  border-color: #FFC700;
+  box-shadow: 0 0 10px rgba(255, 199, 0, 0.2);
+}
+
+.reach-out-form textarea {
+  resize: vertical;
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #222;
+  color: #FFFFFF;
+}
+
+.file-upload-label:hover {
+  background-color: #333;
+}
+
+.file-upload-label svg {
+  margin-right: 10px;
+}
+
+#file-upload {
+  display: none;
+}
+
+.reach-out-form .btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 16px;
+}
+
+/* Animations for reach-out */
+.reach-out-text,
+.reach-out-form {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* ======================
+   Media Queries
+====================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #121212; 
+    z-index: 20; 
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  nav {
+    display: block; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    padding: 20px 0;
+    transform: translateY(-250%); 
+    transition: transform 0.3s ease-in-out; 
+    z-index: -1; 
+  }
+
+  nav.active {
+    transform: translateY(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .header-btn {
+    display: none;
+  }
+
+  .grid,
+  .about-grid,
+  .reach-out-content,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content h2,
+  .reach-out-text h2 {
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .reach-out-form .form-group {
+    flex-direction: column;
+  }
+}
+
+
+/* ======================
+   Bar Chart Styling
+====================== */
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 100%;
+  height: 400px;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 40px 20px 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  margin-top: 40px;
+}
+
+.chart-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 100px;
+  height: 100%;
+  position: relative;
+}
+
+.chart-bar {
+  width: 50px;
+  border-radius: 5px 5px 0 0;
+  margin-top: auto;
+  position: relative;
+}
+
+.chart-value {
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.chart-label {
+  color: #FFFFFF;
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  height: 40px; /* Reserve space for multi-line labels */
+}
+
+/* ======================
+   Service Icon Styling
+====================== */
+.service-icon {
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
