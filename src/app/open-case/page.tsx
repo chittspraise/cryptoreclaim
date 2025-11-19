@@ -173,14 +173,13 @@ export default function OpenCase() {
                 <p>Phone: +1 (530) 414-0088</p>
               </div>
               <div>
-                <h3>Follow Us</h3>
-                <div className="social-media">
-                  <a href="#"><Image src="/images/facebook_logo.svg" alt="Facebook" width={30} height={30} /></a>
-                  <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Twitter" width={30} height={30} /></a>
-
-                  <a href="https://t.me/+13367030082"><Image src="/images/tele.webp" alt="Telegram" width={30} height={30} /></a>
-                </div>
-              </div>
+                                <h3>Follow Us</h3>
+                                <div className="social-media">
+                                  <a href="#"><Image src="/images/facebook_logo.svg" alt="Facebook" width={30} height={30} /></a>
+                                  <a href="#"><Image src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Twitter" width={30} height={30} /></a>
+                
+                                  <a href="https://t.me/+13367030082"><Image src="/images/tele.webp" alt="Telegram" width={30} height={30} /></a>
+                                </div>              </div>
             </div>
           </div>
           <div className="footer-copyright">

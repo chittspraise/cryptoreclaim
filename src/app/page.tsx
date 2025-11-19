@@ -325,8 +325,7 @@ export default function Home() {
                   <div className="chart-value">{data.cases}{data.projected && '*'}</div>
                   <motion.div
                     className="chart-bar"
-                    style={{ backgroundColor: data.projected ? '#a08d3a' : '#FFC700' }}
-                    initial={{ height: 0 }}
+                    initial={{ height: 0, backgroundColor: data.projected ? '#a08d3a' : '#FFC700' }}
                     animate={{ height: `${(data.cases / maxValue) * 100}%` }}
                     transition={{ duration: 1, delay: index * 0.2 }}
                   ></motion.div>
@@ -533,33 +532,22 @@ export default function Home() {
                 <p>Phone: +1 302 334 2200</p>
               </div>
               <div>
-                <h3>Follow Us</h3>
+                                                <h3>Connect with us</h3>
                 <div className="social-media">
-                            <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac"><Image src="/images/ffb.png" alt="Facebook" width={30} height={30} /></a>
-                            <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/ii.png" alt="Instagram" width={30} height={30} /></a>
-                            <a href="https://t.me/+13367030082"><Image src="/images/tele.webp" alt="Telegram" width={30} height={30} /></a>                </div>
+                  <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac"><Image src="/images/ffb.png" alt="Facebook" width={40} height={40} /></a>
+                  <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/ii.png" alt="Instagram" width={40} height={40} /></a>
+                  <a href="https://t.me/+13367030082"><Image src="/images/tele.webp" alt="Telegram" width={40} height={40} /></a>
+                </div>
               </div>
             </div>
           </div>
           <div className="footer-copyright">
             <p>&copy; 2025 Crypto Reclaim. All rights reserved.</p>
-          </div>
+          </div>np
         </footer>
 
         <a href="https://wa.me/13023342200" className="whatsapp-icon" target="_blank">
           <Image src="/images/iconapp.png" alt="WhatsApp" width={50} height={50} />
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac" className="social-icon facebook-icon" target="_blank">
-          <Image src="/images/ffb.png" alt="Facebook" width={30} height={30} />
-        </a>
-
-        <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ==" className="social-icon instagram-icon" target="_blank">
-          <Image src="/images/ii.png" alt="Instagram" width={30} height={30} />
-        </a>
-
-        <a href="https://t.me/+13367030082" className="social-icon telegram-icon" target="_blank">
-          <Image src="/images/tele.webp" alt="Telegram" width={30} height={30} />
         </a>
 
         <a href="mailto:cryptoreclaim@usa.com" className="social-icon email-icon" target="_blank">

@@ -510,7 +510,7 @@ nav a {
 }
 
 .email-icon {
-  bottom: 340px; /* Position above Telegram */
+  bottom: 90px; /* Position above WhatsApp with a 10px gap */
   background-color: #D44638; /* A common email color */
   color: white;
   width: 60px; /* Same size as WhatsApp */
