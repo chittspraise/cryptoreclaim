@@ -13,22 +13,11 @@ export function createServerClient() {
         },
         set: async (name: string, value: string, options: CookieOptions) => {
           const cookieStore = await cookies()
-          try {
-            cookieStore.set({ name, value, ...options })
-          } catch {
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
-          }
+          cookieStore.set({ name, value, ...options })
         },
         remove: async (name: string, options: CookieOptions) => {
           const cookieStore = await cookies()
-          try {
-            cookieStore.set({ name, value: '', ...options })
-          } catch {
-            // The `remove` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
-          }
+          cookieStore.set({ name, value: '', ...options })
         },
       },
     }

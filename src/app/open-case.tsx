@@ -68,7 +68,7 @@ export default function OpenCase() {
                 <h3>Follow Us</h3>
                 <div className="social-media">
                                 <a href="#"><Image src="/images/facebook_logo.svg" alt="Facebook" width={30} height={30} /></a>
-                                <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/instagram_logo.svg" alt="Instagram" width={30} height={30} /></a>                </div>
+                                <a href="https://t.me/+13367030082"><Image src="/images/tele.webp" alt="Telegram" width={30} height={30} /></a>                </div>
               </div>
             </div>
           </div>

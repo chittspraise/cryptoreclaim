@@ -135,6 +135,16 @@ nav a {
   border: none;
 }
 
+.email-btn {
+  background-color: #FFC700;
+  color: #121212;
+  padding: 7.5px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  font-size: 0.875rem; /* Smaller font size */
+}
+
 /* ======================
    Sections
 ====================== */
@@ -463,6 +473,55 @@ nav a {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+.social-icon {
+  position: fixed;
+  right: 20px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth effect */
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.facebook-icon {
+  bottom: 100px;
+  background-color: #1877F2;
+  color: white;
+}
+
+.instagram-icon {
+  bottom: 180px;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  color: white;
+}
+
+.telegram-icon {
+  bottom: 260px;
+  background-color: #229ED9;
+  color: white;
+}
+
+.email-icon {
+  bottom: 340px; /* Position above Telegram */
+  background-color: #D44638; /* A common email color */
+  color: white;
+  width: 60px; /* Same size as WhatsApp */
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* ======================
    Reach-out Section
 ====================== */
@@ -565,55 +624,65 @@ nav a {
 }
 
 /* ======================
+   Form Sizing
+====================== */
+.form-container-60w {
+  max-width: 60%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .form-container-60w {
+    max-width: 90%; /* Adjust for smaller screens */
+  }
+}
+
+/* ======================
    Media Queries
 ====================== */
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    background-color: #121212; 
-    z-index: 20; 
+  .nav-wrapper {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    position: fixed; /* Changed from absolute to fixed */
+    top: 0; /* Align to the very top */
+    left: 0;
+    right: 0;
+    /* bottom: 0; Removing bottom to allow content to flow from top */
+    height: auto; /* Allow height to adjust to content */
+    background-color: #121212;
+    padding: 20px 0; /* Adjust padding as needed */
+    padding-top: 80px; /* Add padding to push content down from the top edge */
+    z-index: 1000; /* Increased z-index */
+    overflow-y: auto; /* Added for scrollable content */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center; /* Center content horizontally */
   }
 
+  .nav-wrapper.active {
+    display: flex; /* Shown when active */
+  }
+  
   .hamburger {
     display: block;
     cursor: pointer;
-    z-index: 10;
-  }
-
-  nav {
-    display: block; 
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #121212;
-    padding: 20px 0;
-    transform: translateY(-250%); 
-    transition: transform 0.3s ease-in-out; 
-    z-index: -1; 
-  }
-
-  nav.active {
-    transform: translateY(0);
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if space is limited */
+    justify-content: center; /* Center items horizontally */
     align-items: center;
+    width: 100%;
+    gap: 15px; /* Add a gap between items */
   }
 
   nav li {
     margin: 10px 0;
   }
-
-  .header-btn {
-    display: none;
-  }
-
+  
   .grid,
   .about-grid,
   .reach-out-content,

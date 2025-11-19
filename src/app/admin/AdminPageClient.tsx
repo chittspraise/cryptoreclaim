@@ -66,53 +66,53 @@ export default function AdminPageClient({
           <h1 className="text-2xl sm:text-3xl font-bold text-white text-center my-8">
             Case Submissions ({cases.length})
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
             {cases.length === 0 ? (
-              <p className="text-center text-gray-300 py-8 md:col-span-2 lg:col-span-3">No cases found.</p>
+              <p className="text-center text-gray-300 py-8">No cases found.</p>
             ) : (
               cases.map((caseItem) => (
-                <div key={caseItem.id} className="bg-white/10 rounded-lg shadow-lg p-6 hover:bg-white/20 transition-all duration-300 border-b-2 border-gray-500 flex flex-col justify-between">
+                <div key={caseItem.id} className="bg-white/10 rounded-lg shadow-lg p-6 hover:bg-white/20 transition-all duration-300 mb-8 border-b border-gray-700 pb-8">
                   {/* -- Case Details -- */}
                   <div className="space-y-4">
                     {/* Name */}
-                    <div className="flex flex-col md:flex-row md:gap-x-4">
-                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Name:</p>
-                      <p className="w-full md:w-3/4 text-gray-300">{caseItem.name}</p>
+                    <div className="grid grid-cols-[120px_1fr] gap-4 items-start">
+                      <p className="font-bold text-white">Name:</p>
+                      <p className="text-gray-300 break-words">{caseItem.name}</p>
                     </div>
                     {/* Email */}
-                    <div className="flex flex-col md:flex-row md:gap-x-4 items-start md:items-center">
-                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Email:</p>
-                      <div className="w-full md:w-3/4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mt-2 md:mt-0">
+                    <div className="grid grid-cols-[120px_1fr] gap-4 items-start">
+                      <p className="font-bold text-white">Email:</p>
+                      <div className="flex flex-wrap items-center justify-between gap-2 min-w-0">
                         <p className="text-gray-300 break-all">{caseItem.email}</p>
                         <a 
                           href={`mailto:${caseItem.email}`}
-                          className="btn text-white no-underline flex-shrink-0 mt-2 sm:mt-0"
+                          className="btn text-white no-underline flex-shrink-0"
                         >
                           Send Email
                         </a>
                       </div>
                     </div>
                     {/* Subject */}
-                    <div className="flex flex-col md:flex-row md:gap-x-4">
-                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Subject:</p>
-                      <p className="w-full md:w-3/4 text-gray-300">{caseItem.subject}</p>
+                    <div className="grid grid-cols-[120px_1fr] gap-4 items-start">
+                      <p className="font-bold text-white">Subject:</p>
+                      <p className="text-gray-300 break-words">{caseItem.subject}</p>
                     </div>
                     {/* Message */}
-                    <div className="flex flex-col md:flex-row md:gap-x-4">
-                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Message:</p>
-                      <p className="w-full md:w-3/4 text-gray-300 whitespace-pre-wrap break-words">{caseItem.message}</p>
+                    <div className="grid grid-cols-[120px_1fr] gap-4 items-start">
+                      <p className="font-bold text-white">Message:</p>
+                      <p className="text-gray-300 whitespace-pre-wrap break-words">{caseItem.message}</p>
                     </div>
                     {/* Uploaded File */}
-                    <div className="flex flex-col md:flex-row md:gap-x-4 items-start pt-2">
-                      <p className="w-full md:w-1/4 font-bold text-white flex-shrink-0">Uploaded File:</p>
-                      <div className="w-full md:w-3/4 mt-2 md:mt-0">
+                    <div className="grid grid-cols-[120px_1fr] gap-4 items-start pt-2">
+                      <p className="font-bold text-white">Uploaded File:</p>
+                      <div className="min-w-0">
                         {caseItem.file_url ? (
                           isImage(caseItem.file_url) ? (
                             <a href={caseItem.file_url} target="_blank" rel="noopener noreferrer">
-                              <Image src={caseItem.file_url} alt="Uploaded file" width={100} height={100} className="rounded-md"/>
+                              <Image src={caseItem.file_url} alt="Uploaded file" width={100} height={100} className="rounded-md max-w-full h-auto"/>
                             </a>
                           ) : (
-                            <a href={caseItem.file_url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                            <a href={caseItem.file_url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline break-all">
                               View File
                             </a>
                           )
@@ -123,7 +123,7 @@ export default function AdminPageClient({
                     </div>
                   </div>
                   {/* -- Timestamp and Delete Button -- */}
-                  <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-700">
+                  <div className="flex justify-between items-center mt-4 pt-4">
                     <p className="text-xs text-gray-400">
                       {new Date(caseItem.created_at).toLocaleString()}
                     </p>

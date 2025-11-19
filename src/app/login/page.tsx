@@ -29,14 +29,14 @@ export default async function LoginPage(props: {
 
   return (
     <main className="flex items-center justify-center min-h-screen px-4 bg-gray-900">
-      <div className="w-full max-w-2xl mx-auto bg-black/70 backdrop-blur-md rounded-[2.5rem] p-10 text-white border-2 border-white/20 shadow-[0_0_25px_rgba(255,199,0,0.2)]">
+      <div className="form-container-60w mx-auto bg-black/70 backdrop-blur-md rounded-[2.5rem] p-10 text-white border-2 border-white/20 shadow-[0_0_25px_rgba(255,199,0,0.2)]">
         <div className="mb-8 text-center">
           <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={200} height={150} className="mx-auto mb-4" />
           <h1 className="text-4xl font-bold">Admin Login</h1>
           <p className="mt-2 text-gray-300">Sign in to access the admin panel</p>
         </div>
 
-        <form className="space-y-6 w-full mx-auto">
+        <form className="space-y-6 w-4/5 mx-auto">
           <div>
             <label
               htmlFor="email"
@@ -50,7 +50,7 @@ export default async function LoginPage(props: {
               type="email"
               required
               className="w-full px-6 bg-white/10 border border-white/30 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 placeholder-gray-400 transition-all duration-300"
-              style={{ height: '40px', fontSize: '2rem' }}
+              style={{ height: '40px', fontSize: '1rem' }}
               placeholder="you@example.com"
             />
           </div>
@@ -68,7 +68,7 @@ export default async function LoginPage(props: {
               type="password"
               required
               className="w-full px-6 bg-white/10 border border-white/30 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 placeholder-gray-400 transition-all duration-300"
-              style={{ height: '40px', fontSize: '2rem' }}
+              style={{ height: '40px', fontSize: '1 rem' }}
               placeholder="••••••••"
             />
           </div>

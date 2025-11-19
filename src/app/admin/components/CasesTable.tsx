@@ -65,7 +65,7 @@ export default function CasesTable({ cases }: { cases: Case[] }) {
           <tbody className="divide-y divide-white/20">
             {cases.map((caseItem) => (
               <tr key={caseItem.id} className="hover:bg-white/10">
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100">
+                <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-100">
                   {caseItem.name}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">

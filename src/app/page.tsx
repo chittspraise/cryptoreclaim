@@ -108,35 +108,61 @@ export default function Home() {
   return (
     <main>
       <div className="w-full max-w-7xl mx-auto my-8 p-8 bg-neutral-800 border border-neutral-700 rounded-lg px-4 sm:px-6 lg:px-8">
-        <header>
-          <div className="logo">
-            <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={150} height={120} />
+        <header className="relative">
+          <div className="flex items-center justify-between p-4">
+            {/* Left Section (Logo) */}
+            <div className="flex-1 flex justify-start">
+              <div className="logo">
+                <Image src="/images/lofinal.png" alt="Crypto Reclaim Logo" width={150} height={120} />
+              </div>
+            </div>
+
+            {/* Center Section (Desktop Navigation) */}
+            <nav className="hidden md:flex flex-grow justify-center">
+              <ul className="flex space-x-6">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
+              </ul>
+            </nav>
+
+            {/* Right Section (Open Case button and Hamburger) */}
+            <div className="flex-1 flex justify-end items-center">
+              <a href="/open-case" className="hidden md:block btn header-btn">Open Case</a>
+              <div className="hamburger md:hidden ml-4" onClick={toggleNav}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </div>
+            </div>
           </div>
-          <div className="hamburger" onClick={toggleNav}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+
+          {/* Mobile Navigation Dropdown */}
+          <div className={`nav-wrapper md:hidden flex justify-center ${isNavOpen ? 'active' : ''}`}>
+            <nav className="w-full">
+              <ul className="flex items-center space-x-4">
+                <li><a href="#" onClick={toggleNav}>Home</a></li>
+                <li><a href="#services" onClick={toggleNav}>Services</a></li>
+                <li><a href="#about" onClick={toggleNav}>About</a></li>
+                <li><a href="#contact" onClick={toggleNav}>Contact</a></li>
+                <li><a href="/login" onClick={toggleNav}>Login</a></li>
+              </ul>
+            </nav>
+            <a href="/open-case" className="btn header-btn mt-6">Open Case</a>
           </div>
-          <nav className={isNavOpen ? 'active' : ''}>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="/login">Login</a></li>
-            </ul>
-          </nav>
-          <a href="/open-case" className="btn header-btn">Open Case</a>
         </header>
 
         <section className="hero">
           <div className="hero-logo">
-            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={150} />
+            <Image src="/images/lofinal.png" alt="Crypto Reclaim" width={300} height={190} />
           </div>
           <p className="text-center text-lg text-white my-4">Romance Scams | Online Blackmail | Crypto Recovery | Investment Scams | Blockchain Forensics</p>
           <a href="/open-case" className="btn">Get a Free Consultation</a>
+          
         </section>
 
         <section id="about" className="section">
@@ -509,8 +535,9 @@ export default function Home() {
               <div>
                 <h3>Follow Us</h3>
                 <div className="social-media">
-                            <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac"><Image src="/images/facebook.png" alt="Facebook" width={30} height={30} /></a>
-                            <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/insta.avif" alt="Instagram" width={30} height={30} /></a>                </div>
+                            <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac"><Image src="/images/ffb.png" alt="Facebook" width={30} height={30} /></a>
+                            <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ=="><Image src="/images/ii.png" alt="Instagram" width={30} height={30} /></a>
+                            <a href="https://t.me/+13367030082"><Image src="/images/tele.webp" alt="Telegram" width={30} height={30} /></a>                </div>
               </div>
             </div>
           </div>
@@ -521,6 +548,25 @@ export default function Home() {
 
         <a href="https://wa.me/13023342200" className="whatsapp-icon" target="_blank">
           <Image src="/images/iconapp.png" alt="WhatsApp" width={50} height={50} />
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=100091801771587&ref=fb_bidir_ig_profile_ac" className="social-icon facebook-icon" target="_blank">
+          <Image src="/images/ffb.png" alt="Facebook" width={30} height={30} />
+        </a>
+
+        <a href="https://www.instagram.com/cryptocurrencyreclaim?igsh=MXJkZ2JkOGZkcnFqeQ==" className="social-icon instagram-icon" target="_blank">
+          <Image src="/images/ii.png" alt="Instagram" width={30} height={30} />
+        </a>
+
+        <a href="https://t.me/+13367030082" className="social-icon telegram-icon" target="_blank">
+          <Image src="/images/tele.webp" alt="Telegram" width={30} height={30} />
+        </a>
+
+        <a href="mailto:cryptoreclaim@usa.com" className="social-icon email-icon" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
         </a>
       </div>
     </main>
