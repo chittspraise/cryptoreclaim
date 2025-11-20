@@ -83,6 +83,15 @@ export default async function LoginPage(props: {
             </button>
           </div>
 
+          <div className="text-center mt-4">
+            <Link
+              href="/forgot-password"
+              className="font-medium text-[#FFC700] hover:underline text-sm"
+            >
+              Forgot password?
+            </Link>
+          </div>
+
           {message && (
             <p className="mt-4 p-3 bg-red-500/50 text-white text-center rounded-2xl border border-red-700">
               {message}
